@@ -54,6 +54,6 @@ addBtn.addEventListener = () => {
     
 }
 
-document.querySelector("start"){
-    
-}
+// document.querySelector("start"){
+
+// }
