@@ -7,7 +7,7 @@ export default defineConfig({
   ],
    server: {
     allowedHosts: [
-      'outline-van-linda-detail.trycloudflare.com'
+      'albert-sport-jersey-holiday.trycloudflare.com'
     ]
   },
 })
