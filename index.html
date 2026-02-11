@@ -8,51 +8,43 @@
   <title>Multitimer</title>
 </head>
 
-<body class="bg-slate-50">
+<body class="bg-slate-200">
 
-  <h1 class="text-3xl font-bold underline"> Multi-Timer Dashboard </h1>
+  <h1 class="text-3xl font-bold underline text-center p-5"> Multi-Timer Dashboard </h1>
   
 
 
-  <main class="flex max-md:flex-col p-5">
-    <aside class="border w-sm flex flex-col space-y-2 mx-auto p-5">
-      <label for="name">Timer Name</label>
-      <input id="input-name" type="text" class="border" />
-      <div class="time">
-        <input id="hr" type="number" min="0" max="12" class="border" />
+  <main class="flex max-md:flex-col p-5 container mx-auto gap-8">
+    <aside class="border-t-8 rounded-2xl  border-t-gray-500 w-sm flex flex-col space-y-5 shadow-2xl  h-fit mx-auto p-5">
+      <div class="space-y-3">
+      <label for="name" class="block">Timer Name</label>
+      <input id="input-name" type="text" placeholder="Timer1" class=" p-2 w-full bg-gray-100"  value="Timer"/>
+      </div>
+      <div class="time *:rounded-xl">
+        <input id="hr" type="number" min="0" max="12" class="border bg-sky-50 font-semibold text-xl text-center" value="00"/>
         <span>Hr</span>
-        <input id="min" type="number" class="border" min="0" max="60" />
+        <input id="min" type="number" class="border bg-sky-50 font-semibold text-xl text-center" min="0" max="60" value="00"/>
         <span>Min</span>
-        <input id="sec" type="number" class="border" min="0" max="60" />
+        <input id="sec" type="number" class="border bg-sky-50 font-semibold text-xl text-center" min="0" max="60" value="10"/>
         <span>Sec</span>
       </div>
-      <div class="quick-btns grid grid-cols-3 space-x-2 space-y-2 ">
+      <div class="quick-btns grid grid-cols-3 gap-4  ">
 
-        <button type="button" class="border p-1 px-2 rounded-full bg-blue-500" data-min="5">5Mins</button>
-        <button type="button" class="border p-1 px-2 rounded-full bg-blue-500" data-min="10">10Mins</button>
-        <button type="button" class="border p-1 px-2 rounded-full bg-blue-500" data-min="15">15Mins</button>
-        <button type="button" class="border p-1 px-2 rounded-full bg-blue-500" data-min="30">30Mins</button>
-        <button type="button" class="border p-1 px-2 rounded-full bg-blue-500" data-min="45">45Mins</button>
-        <button type="button" class="border p-1 px-2 rounded-full bg-blue-500" data-min="60">60Mins</button>
+        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 "  data-min="5">5 Mins</button>
+        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 "  data-min="10">10Mins</button>
+        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 "  data-min="15">15Mins</button>
+        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 "  data-min="30">30Mins</button>
+        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 "  data-min="45">45Mins</button>
+        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 "  data-min="60">60Mins</button>
       </div>
       <div>
         <button class="p-2 rounded-md border w-full bg-blue-200 " id="add-btn">Add Timer</button>
         <div>
     </aside>
 
-    <section class="flex-1 ">
-      <div id="dash" class="p-5">
-        <div class="border w-fit p-3  rounded-2xl  ">
-          <h1 class="font-semibold text-center">Timer1</h1>
-          <div class="time text-center">
-            <span data-role="hr">00</span>:
-            <span data-role="min">00</span>:
-            <span data-role="sec">00</span>
-          </div>
-          <button class="bg-yellow-400 p-1 space-x-2 rounded-full px-2 ">Start</button>
-          <!-- <button class="bg--400 p-2 space-x-2">Pause</button> -->
-          <button class="bg-red-500 rounded-full p-1 px-2 text-white ">Reset</button>
-        </div>
+    <section class="flex-1 bg-gray-100 rounded-2xl shadow-2xl  ">
+      <div id="dash" class="p-5 grid grid-cols-3">
+        
       </div>
     </section>
   </main>
