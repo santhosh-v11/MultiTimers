@@ -4,46 +4,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./src/style.css">
   <title>Multitimer</title>
 </head>
 
-<body class="bg-slate-200">
+<body class="bg-zinc-300">
 
-  <h1 class="text-3xl font-bold underline text-center p-5"> Multi-Timer Dashboard </h1>
+<nav class="container flex items-center flex-wrap justify-between mx-auto text-white bg-gray-500 p-2 max-sm:p-1 rounded-2xl m-5 max-sm:m-0.5">
+    <h1 class="text-3xl font-semibold    font-playfair"> Timer Hub </h1>
+    <a href="https://github.com/santhosh-v11/MultiTimers"  target="_blank" title="github" class="text-4xl "><i class="fa-brands fa-github"></i></a>
+</nav>
   
 
 
-  <main class="flex max-md:flex-col p-5 container mx-auto gap-8">
-    <aside class="border-t-8 rounded-2xl  border-t-gray-500 w-sm flex flex-col space-y-5 shadow-2xl  h-fit mx-auto p-5">
+  <main class="flex max-md:flex-col p-5 container mx-auto gap-8 ">
+    <aside class="border-t-8 rounded-2xl bg-slate-200 border-t-gray-500 max-sm:w-sm max-lg:w-xs w-sm flex flex-col space-y-5 shadow-2xl  h-fit mx-auto p-5">
       <div class="space-y-3">
-      <label for="name" class="block">Timer Name</label>
-      <input id="input-name" type="text" placeholder="Timer1" class=" p-2 w-full bg-gray-100"  value="Timer"/>
+      <label for="name" class="block text-lg font-semibold" >Timer Name</label>
+      <input id="input-name" type="text" placeholder="TimerName" class=" p-2 w-full bg-gray-100" minlength="3" />
       </div>
       <div class="time *:rounded-xl">
-        <input id="hr" type="number" min="0" max="12" class="border bg-sky-50 font-semibold text-xl text-center" value="00"/>
+        <p class="text-lg font-semibold pb-3">Set Time</p>
+        <input id="hr" type="number" min="0" max="12" class=" bg-gray-100 font-semibold text-xl text-center" placeholder="00"/>
         <span>Hr</span>
-        <input id="min" type="number" class="border bg-sky-50 font-semibold text-xl text-center" min="0" max="60" value="00"/>
+        <input id="min" type="number" class=" bg-gray-100 font-semibold text-xl text-center" min="0" max="60" placeholder="00"/>
         <span>Min</span>
-        <input id="sec" type="number" class="border bg-sky-50 font-semibold text-xl text-center" min="0" max="60" value="10"/>
+        <input id="sec" type="number" class=" bg-gray-100 font-semibold text-xl text-center" min="0" max="60" placeholder="00" />
         <span>Sec</span>
       </div>
-      <div class="quick-btns grid grid-cols-3 gap-4  ">
-
-        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 "  data-min="5">5 Mins</button>
-        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 "  data-min="10">10Mins</button>
-        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 "  data-min="15">15Mins</button>
-        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 "  data-min="30">30Mins</button>
-        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 "  data-min="45">45Mins</button>
-        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 "  data-min="60">60Mins</button>
+      <p class="text-lg font-semibold">Quick Timers</p>
+      <div class="quick-btns grid grid-cols-3 gap-4 ">
+        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 hover:scale-105 transition-all duration-100 hover:shadow-md cursor-pointer"  data-min="05">5 Mins</button>
+        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 hover:scale-105 transition-all duration-100 hover:shadow-md cursor-pointer"  data-min="10">10Mins</button>
+        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 hover:scale-105 transition-all duration-100 hover:shadow-md cursor-pointer"  data-min="15">15Mins</button>
+        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 hover:scale-105 transition-all duration-100 hover:shadow-md cursor-pointer"  data-min="30">30Mins</button>
+        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 hover:scale-105 transition-all duration-100 hover:shadow-md cursor-pointer"  data-min="45">45Mins</button>
+        <button type="button" class=" p-1 px-2 rounded-full bg-blue-300 hover:scale-105 transition-all duration-100 hover:shadow-md cursor-pointer"  data-min="60">60Mins</button>
       </div>
       <div>
-        <button class="p-2 rounded-md border w-full bg-blue-200 " id="add-btn">Add Timer</button>
+        <button class="p-2 rounded-md  w-full bg-blue-300 text-lg cursor-pointer  hover:bg-blue-400 hover:text-white transition-all font-semibold duration-300" id="add-btn">Add Timer</button>
         <div>
     </aside>
 
     <section class="flex-1 bg-gray-100 rounded-2xl shadow-2xl  ">
-      <div id="dash" class="p-5 grid grid-cols-3">
+      <div id="dash" class="p-5 grid grid-cols-3 max-lg:grid-cols-1 ">
+        <div id="msg" class="text-center col-span-3">
+          <p class="text-2xl font-semibold bg-blue-200 p-2 " >No Timers Available  </p>
+      </div>
         
       </div>
     </section>
